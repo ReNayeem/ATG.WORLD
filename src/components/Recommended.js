@@ -8,10 +8,13 @@ import groupPic1 from '../resources/img/group/group.png'
 import groupPic2 from '../resources/img/group/group2.png'
 import groupPic3 from '../resources/img/group/group3.png'
 import groupPic4 from '../resources/img/group/group4.png'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../Firebase/Firebase';
 import './Recommended.css'
 
 
 const Recommended = () => {
+    const [user] = useAuthState(auth)
     const [follow, setFollow] = useState(false)
     const [follow2, setFollow2] = useState(true)
     const [follow3, setFollow3] = useState(true)
@@ -33,16 +36,26 @@ const Recommended = () => {
         <>
             <div className='d-none recommended d-md-block'>
                 {
-                    <>
-                        <div className='d-flex justify-content-end mt-4'>
-                            <div className='d-flex justify-content-between  recommended-custom-width' ><span> <span><GoLocation /></span><span> |</span><span className='location-text'>Enter your location</span></span> <span className='location-close cursor'><AiOutlineClose /></span></div>
-                        </div>
-                        <div className='d-flex justify-content-end'><hr className='recommended-custom-width custom-hr-2' /></div>
-                        <div className='d-flex justify-content-end'><span className='d-flex align-items-start recommended-custom-width'> <span className='me-2'><AiOutlineExclamationCircle /></span><span className='location-text-2'>Your location will help us serve better and extend a personalised experience.</span></span></div>
-                    </>
+                    user ?
+                        <>
+                            <div className='d-flex justify-content-end mt-4'>
+                                <div className='d-flex justify-content-between  recommended-custom-width' ><span> <span><GoLocation /></span><span> |</span><span className='location-text'>Enter your location</span></span> <span className='location-close cursor'><AiOutlineClose /></span></div>
+                            </div>
+                            <div className='d-flex justify-content-end'><hr className='recommended-custom-width custom-hr-2' /></div>
+                            <div className='d-flex justify-content-end'><span className='d-flex align-items-start recommended-custom-width'> <span className='me-2'><AiOutlineExclamationCircle /></span><span className='location-text-2'>Your location will help us serve better and extend a personalised experience.</span></span></div>
+                        </>
+                        :
+
+                        <>
+                            <div className='d-flex justify-content-end mt-4'>
+                                <div className='d-flex justify-content-between recommended-custom-width' ><span> <span><GoLocation /></span> <span className='location-text text-dark'>Nodia, India</span></span> <span><FaPen /></span></div>
+                            </div>
+                            <div className='d-flex justify-content-end'><hr className='recommended-custom-width' style={{ width: '243px', color: '#b8b8b8' }} /></div>
+                            <div className='d-flex justify-content-end'><span className='d-flex recommended-custom-width' style={{ width: '243px', color: '#b8b8b8', fontSize: '14px' }}> <span className='me-1  location-text-2'><AiOutlineExclamationCircle /></span><span className='location-text-2'>Your location will help us serve better and extend a personalised experience.</span></span></div>
+                        </>
 
                 }
-                <div className={`${'d-none'}`}>
+                <div className={`${user ? 'd-block' : 'd-none'}`}>
                     <div className='d-flex justify-content-end'>
                         <div style={{ width: '243px' }} className='my-3 recommended-custom-width'>
                             <p className='recommended-group-text-0'><span><BiLike /></span> <span className='recommended-group-text'>RECOMMENDED GROUPS</span></p>

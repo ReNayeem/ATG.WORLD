@@ -2,9 +2,14 @@ import React from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { MdFacebook } from 'react-icons/md'
 import { FcGoogle } from 'react-icons/fc'
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../Firebase/Firebase';
+import { signOut } from 'firebase/auth'
 import './Banner.css'
 
 const Banner = () => {
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [user] = useAuthState(auth)
     return (
         <>
             <div className='banner'>
@@ -14,7 +19,7 @@ const Banner = () => {
                             <span className='cursor' style={{ fontSize: '18px', color: '#ffffff' }}><AiOutlineArrowLeft /></span>
                             {
                                 user ?
-                                    <span type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='px-3 rounded py-1' style={{ fontSize: '15px', color: '#ffffff', border: '1px solid white' }}>Leave Group</span>
+                                    <span onClick={() => signOut(auth)} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='px-3 rounded py-1' style={{ fontSize: '15px', color: '#ffffff', border: '1px solid white' }}>Leave Group</span>
                                     :
                                     <span type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='px-3 rounded py-1' style={{ fontSize: '15px', color: '#ffffff', border: '1px solid white' }}>Join Group</span>
                             }
@@ -45,7 +50,7 @@ const Banner = () => {
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom" style={{ color: 'gray', textDecoration: 'underline' }}>or, Sign In</a>
                     </div>
                     <div><button style={{ backgroundColor: '#ffffff', border: '1px solid #d9d9db', borderRadius: '2px' }} className='w-100 py-2 '><span className='text-primary'><MdFacebook /></span> Sign up with Facebook</button></div>
-                    <div><button style={{ backgroundColor: '#ffffff', border: '1px solid #d9d9db', borderRadius: '2px' }} className='w-100 py-2 mt-2' ><FcGoogle /> Sign up with Google</button></div>
+                    <div><button style={{ backgroundColor: '#ffffff', border: '1px solid #d9d9db', borderRadius: '2px' }} className='w-100 py-2 mt-2' onClick={() => signInWithGoogle()}><FcGoogle /> Sign up with Google</button></div>
                     <p className='text-center mt-4 policy'>By signing up, you agree to our Terms & conditions, Privacy policy</p>
                 </div>
             </div>
@@ -63,7 +68,7 @@ const Banner = () => {
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" style={{ color: 'gray', textDecoration: 'underline' }}>or, Create an account</a>
                     </div>
                     <div><button style={{ backgroundColor: '#ffffff', border: '1px solid #d9d9db', borderRadius: '2px' }} className='w-100 py-2 '><span className='text-primary'><MdFacebook /></span> Sign up with Facebook</button></div>
-                    <div><button style={{ backgroundColor: '#ffffff', border: '1px solid #d9d9db', borderRadius: '2px' }} className='w-100 py-2 mt-2' ><FcGoogle /> Sign up with Google</button></div>
+                    <div><button style={{ backgroundColor: '#ffffff', border: '1px solid #d9d9db', borderRadius: '2px' }} className='w-100 py-2 mt-2' onClick={() => signInWithGoogle()}><FcGoogle /> Sign up with Google</button></div>
                     <div><button style={{ backgroundColor: '#ffffff', border: 'none' }} className='w-100 py-2 mt-2'>Forgot Password ?</button></div>
                 </div>
             </div>

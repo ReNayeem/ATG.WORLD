@@ -1,9 +1,12 @@
 import React from 'react';
 import { MdOutlineGroupAdd, MdArrowDropDown } from 'react-icons/md'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
-import './PostNav.css'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../Firebase/Firebase';
+import './Post.css'
 
-const PostNav = () => {
+const Post = () => {
+    const [user] = useAuthState(auth);
     return (
         <>
             <div className="d-none d-md-none d-lg-block position-changing nav-links">
@@ -27,7 +30,15 @@ const PostNav = () => {
                                     <a class="nav-link nav-link-3  cursor" >Job</a>
                                 </li>
                             </ul>
-
+                            <div>
+                                <button className='write-post-btn btn btn-light'>Write Post<span className='write-post-btn-arrow'><MdArrowDropDown /></span></button>
+                                {
+                                    user ?
+                                        (<button className='btn border leave-group-btn'><span className='me-2'><RiLogoutBoxRLine /></span>Leave Group</button>)
+                                        :
+                                        (<button className='btn btn-primary join-group-btn' ><span className='me-2'><MdOutlineGroupAdd /></span>Join Group</button>)
+                                }
+                            </div>
                         </div>
                         <hr className='post-hr' />
                     </div>
@@ -52,4 +63,4 @@ const PostNav = () => {
     );
 };
 
-export default PostNav;
+export default Post;

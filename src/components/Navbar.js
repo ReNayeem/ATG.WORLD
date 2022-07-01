@@ -3,11 +3,17 @@ import loginPic from '../resources/img/login.png'
 import { MdFacebook } from 'react-icons/md'
 import { FcGoogle } from 'react-icons/fc'
 import person1 from '../resources/img/person/person4.png'
+import auth from '../Firebase/Firebase';
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth'
 import logo from "../resources/img/logo.png"
 import './Navbar.css'
 
 
 const Navbar = () => {
+
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [user1] = useAuthState(auth)
 
 
     return (
@@ -30,7 +36,7 @@ const Navbar = () => {
                                     text-dark text-decoration-none" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">Siddharth Goyal
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <li><button class="dropdown-item" type="button">Log Out</button></li>
+                                        <li><button onClick={() => signOut(auth)} class="dropdown-item" type="button">Log Out</button></li>
                                     </ul>
                                 </div>
                             </div>
