@@ -1,0 +1,66 @@
+.recommended {
+    position: sticky;
+    top: 183px;
+}
+
+.recommended-custom-width {
+    width: 243px;
+}
+
+.location-close {
+    color: black;
+}
+
+.location-text {
+    color: #808080;
+    line-height: 18.2px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.custom-hr-2 {
+    margin-top: 11px;
+    margin-bottom: 32px;
+}
+
+.location-text-2 {
+    color: #808080;
+    line-height: 16px;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-bottom: 40px;
+}
+
+.recommended-group-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: 400;
+}
+
+.recommended-group-text-0 {
+    margin-bottom: 24px;
+}
+
+.followers {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: 400;
+}
+
+.follow-or-not {
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 24px;
+}
+
+.see-more {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    line-height: 15.6px;
+    font-weight: 400;
+    color: #2F6CE5;
+    margin-top: 38px;
+}
