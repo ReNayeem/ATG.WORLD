@@ -1,0 +1,115 @@
+.card-img-top {
+    height: 220px;
+}
+
+.post-card-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    line-height: 21.4px;
+    font-weight: 500;
+}
+
+.post-card-tag-mobile {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: 500;
+}
+
+.post-card-header {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    line-height: 29.52px;
+    font-weight: 600;
+}
+
+.post-card-header-mobile {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 20.8px;
+    font-weight: 600;
+}
+
+.post-card-mini-header {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 25.49px;
+    font-weight: 400;
+    color: #5C5C5C;
+}
+
+.post-card-mini-header-mobile {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: 400;
+    color: #5C5C5C;
+}
+
+.person-img-mobile {
+    width: 37px;
+    height: 37px;
+}
+
+.post-card-person-name {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 23.4px;
+    font-weight: 600;
+}
+
+.post-card-person-name-mobile {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    line-height: 16.9px;
+    font-weight: 600;
+}
+
+.post-card-view {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    line-height: 18.2px;
+    font-weight: 500;
+    color: #525252;
+}
+
+.post-card-view-mobile {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    line-height: 15.6px;
+    font-weight: 500;
+    color: #525252;
+}
+
+.share-button-mobile {
+    width: 70px;
+    height: 36px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    line-height: 15.6px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #F1F3F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-card-share {
+    height: 36px;
+    width: 42px;
+    background-color: #EDEEF0;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #2d2d2d;
+}
+
+
+@media (max-width:577px) {
+    .card-img-top {
+        height: auto;
+    }
+}

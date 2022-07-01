@@ -1,8 +1,8 @@
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import Recommended from "./components/Recommended";
-import PostNav from "./components/PostNav";
 import PostCard from "./components/PostCard";
+import PostNav from "./components/PostNav";
 
 function App() {
   return (
