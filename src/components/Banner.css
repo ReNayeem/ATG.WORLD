@@ -1,0 +1,105 @@
+.banner {
+    background-image: url('../resources/img/banner.jpg');
+    height: 440px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    position: relative;
+    margin-top: 72px;
+}
+
+.banner-background-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
+    ;
+    position: absolute;
+    top: 0;
+}
+
+.banner-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 46.8px;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+}
+
+.banner-mini-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    line-height: 23.4px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.create-account-btn-mobile {
+    width: 150px;
+    height: 36px;
+    border-radius: 20px;
+    border: none;
+    background-color: #2F6CE5;
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+.policy {
+    font-size: 11px;
+    font-weight: 400;
+    color: #212529;
+    line-height: 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+@media (max-width:827px) {
+    .banner {
+        background-image: url('../resources/img/mb.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        position: relative;
+    }
+
+    .banner-title {
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 12px;
+    }
+
+    .banner-mini-title {
+        font-size: 13px;
+        font-weight: 400;
+        color: #ffffff;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width:450px) {
+    .banner {
+        height: 236px;
+    }
+
+    .banner-title {
+        font-size: 17px;
+        line-height: 12.1px;
+    }
+
+    .banner-mini-title {
+        font-size: 12px;
+        line-height: 15.6px;
+        margin-bottom: 42px;
+    }
+}
+
+@media (max-width:991px) {
+    .banner {
+        margin-top: 0px;
+    }
+}
