@@ -1,7 +1,7 @@
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import Recommended from "./components/Recommended";
-import Post from "./components/Post";
+import PostNav from "./components/PostNav";
 import PostCard from "./components/PostCard";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner />
-      <Post />
+      <PostNav />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8">
